@@ -1,0 +1,114 @@
+.connecting-container-active {
+    width: 550px;
+    height: 50px;
+    position: absolute;
+    translate: 50vw 0;
+    inset: 0;
+    transform: translate(-50%, calc(-50% + 45px));
+    z-index: 999;
+    background-color: #ffffff14;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 1;
+    transition-duration: 0.4s;
+}
+
+.connecting-container-inactive {
+    width: 550px;
+    height: 50px;
+    position: absolute;
+    translate: 50vw 0;
+    inset: 0;
+    transform: translate(-50%, calc(-50% + 45px));
+    z-index: 999;
+    background-color: #ffffff14;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0;
+    transition-duration: 0.4s;
+}
+
+.connecting-container-active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    height: 2px;
+    background-color: white;
+    animation: connecting-scroll 2.5s infinite ease-in-out;
+}
+
+.connecting-container-active::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    /* width: 20px; */
+    height: 2px;
+    background-color: white;
+    /* transform: translate(-200px, 0); */
+    animation: connecting-scroll 2.5s infinite ease-in-out;
+}
+
+@keyframes connecting-scroll {
+    0% {
+        width: 0;
+        opacity: 0;
+        translate: -275px 0;
+    }
+    5% {
+        opacity: 0.5;
+    }
+    50% {
+        width: 100px;
+        opacity: 1;
+        translate: 0px 0;
+    }
+    95% {
+        opacity: 0.5;
+    }
+    100% {
+        width: 0;
+        opacity: 0;
+        translate: 275px 0;
+    }
+} 
+
+/* @keyframes connecting-scroll {
+    0% {
+        opacity: 0;
+        translate: -200px 0;
+    }
+    20% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        translate: 200px 0;
+    }
+}  */
+
+.filler {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    background-image: linear-gradient(90deg, #ffffff00 0%, #ffffff60 25%, #ffffff60 50%, #ffffff60 75%, #ffffff00 100%);
+    animation: connecting-scroll 2.5s infinite;
+}
