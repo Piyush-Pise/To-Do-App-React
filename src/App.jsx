@@ -6,44 +6,7 @@ import Todo from "./Todo";
 import ResultFooter from "./ResultFooter";
 import "./App.css";
 
-const ExTodoDescription = [
-  "Complete Online Javascript course",
-  "Jog around the park 3x",
-  "10 minutes meditation",
-  "study for 1 hour",
-  "20 minutes meditation",
-  "Jog around the park 3x",
-  "10 minutes meditation",
-  "study for 1 hour",
-  "20 minutes meditation",
-];
-
-const ExTodoList = [
-  { description: "Complete Online Javascript course", status: false, index: 0 },
-  { description: "Jog around the park 3x", status: false, index: 1 },
-  { description: "10 minutes meditation", status: false, index: 2 },
-  { description: "study for 1 hour", status: false, index: 3 },
-  { description: "20 minutes meditation", status: false, index: 4 },
-  { description: "Jog around the park 3x", status: false, index: 0 },
-  { description: "10 minutes meditation", status: false, index: 0 },
-  { description: "study for 1 hour", status: false, index: 0 },
-  { description: "20 minutes meditation", status: false, index: 0 },
-];
-
-const ExTodoStatus = [
-  true,
-  false,
-  false,
-  false,
-  false,
-  false,
-  false,
-  false,
-  false,
-];
-
-const baseURI = "https://react-todo-app-backend-sw25.onrender.com";
-// const baseURI = "http://localhost:8080";
+const baseURI = "https://react-todo-app-backend-sw25.onrender.com" + "/api";
 let userId = localStorage.getItem("userId") || "";
 
 function App() {
@@ -53,6 +16,7 @@ function App() {
 
   const [todoList, setTodoList] = useState([]);
   const [isConnecting, setIsConnecting] = useState(true);
+  
   useEffect(() => {
     axios
       .get(`${baseURI}/get?userId=${userId}`, {
