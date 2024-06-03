@@ -48,6 +48,7 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
 
+  
   async function postData(jsonData) {
     try {
       const apiUrl = baseURI + "/add";
