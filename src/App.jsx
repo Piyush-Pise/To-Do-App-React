@@ -6,7 +6,7 @@ import Todo from "./Todo";
 import ResultFooter from "./ResultFooter";
 import "./App.css";
 
-const baseURI = "https://react-todo-app-backend-sw25.onrender.com" + "/api";
+const baseURI = "https://todo-react-app-backend-node-js.vercel.app" + "/api";
 let userId = localStorage.getItem("userId") || "";
 
 function App() {
