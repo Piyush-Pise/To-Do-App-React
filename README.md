@@ -52,5 +52,3 @@ Contributions are what make the open source community such an amazing place to l
 Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
-
-*Feel free to modify the content as per your project requirements.*
